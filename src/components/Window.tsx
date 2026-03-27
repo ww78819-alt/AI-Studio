@@ -22,8 +22,8 @@ export default function Window({ isOpen, onClose, title, children, className = "
           className={`fixed inset-4 md:inset-10 lg:inset-20 glass rounded-3xl z-40 flex flex-col overflow-hidden ${className}`}
         >
           {/* Window Header */}
-          <div className="flex items-center justify-between px-6 py-4 border-b border-white/20">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-col md:flex-row items-center justify-between px-6 py-4 border-b border-white/20 gap-2 md:gap-0">
+            <div className="flex items-center gap-2 self-start md:self-center">
               <button onClick={onClose} className="w-3 h-3 rounded-full bg-red-400 hover:bg-red-500 transition-colors flex items-center justify-center group">
                 <X className="w-2 h-2 text-red-900 opacity-0 group-hover:opacity-100" />
               </button>
@@ -34,14 +34,14 @@ export default function Window({ isOpen, onClose, title, children, className = "
                 <Maximize2 className="w-2 h-2 text-green-900 opacity-0 group-hover:opacity-100" />
               </div>
             </div>
-            <div className="text-sm font-medium text-dark-gray/60 serif uppercase tracking-widest">
+            <div className="text-[10px] md:text-sm font-medium text-dark-gray/60 serif uppercase tracking-widest whitespace-nowrap overflow-hidden text-ellipsis max-w-[200px] md:max-w-none">
               {title}
             </div>
-            <div className="w-16" /> {/* Spacer */}
+            <div className="hidden md:block w-16" /> {/* Spacer */}
           </div>
 
           {/* Window Content */}
-          <div className="flex-1 overflow-y-auto p-8 md:p-12">
+          <div className="flex-1 overflow-y-auto p-8 md:p-12 pb-32 md:pb-12">
             {children}
           </div>
         </motion.div>

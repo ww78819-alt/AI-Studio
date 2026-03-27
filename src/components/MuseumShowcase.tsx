@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Plus, Folder, Maximize2, Minus, Circle, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, Plus, Folder, Maximize2, Minus, Circle, ExternalLink, ChevronLeft, ChevronRight, Home } from 'lucide-react';
 import { Rnd } from 'react-rnd';
 
 interface MuseumShowcaseProps {
@@ -290,20 +290,30 @@ export default function MuseumShowcase({ onClose }: MuseumShowcaseProps) {
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black overflow-hidden font-sans">
-      {/* Navigation/Back Button - Only visible in Museum scene to go back to Invitation */}
-      {scene === 'museum' && !activeOverlay && (
+      {/* Navigation Buttons */}
+      <div className="absolute top-8 left-8 flex flex-col md:flex-row gap-4 z-[100]">
         <button 
-          onClick={handleBack}
-          className="absolute top-8 left-8 h-10 px-4 rounded-md bg-white/10 hover:bg-white/20 flex items-center gap-2 text-white/80 transition-all z-[100] border border-white/10 text-xs font-bold uppercase tracking-widest"
+          onClick={onClose}
+          className="h-10 px-4 rounded-md bg-white/10 hover:bg-white/20 flex items-center gap-2 text-white/80 transition-all border border-white/10 text-[10px] font-bold uppercase tracking-widest"
         >
-          <div className="flex gap-1.5">
-            <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
-            <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
-            <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
-          </div>
-          Back to Invitation
+          <Home className="w-3 h-3" />
+          Return to Home
         </button>
-      )}
+
+        {scene === 'museum' && !activeOverlay && (
+          <button 
+            onClick={handleBack}
+            className="h-10 px-4 rounded-md bg-white/10 hover:bg-white/20 flex items-center gap-2 text-white/80 transition-all border border-white/10 text-[10px] font-bold uppercase tracking-widest"
+          >
+            <div className="flex gap-1.5">
+              <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+              <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+              <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+            </div>
+            Back to Invitation
+          </button>
+        )}
+      </div>
 
       <AnimatePresence mode="wait">
         {scene === 'invitation' ? (

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
-import { X, ArrowLeft, ShoppingCart, Heart, Share2, MessageCircle } from 'lucide-react';
+import { X, ArrowLeft, ShoppingCart, Heart, Share2, MessageCircle, Home } from 'lucide-react';
 
 interface ForestShowcaseProps {
   projectId?: string;
@@ -132,12 +132,21 @@ export default function ForestShowcase({ projectId, onClose }: ForestShowcasePro
       className="fixed inset-0 z-[100] bg-[#fcfcfc] overflow-hidden"
     >
       {/* Direct Exit Button */}
-      <button 
-        onClick={onClose}
-        className="fixed top-8 right-8 z-[110] p-3 bg-black/5 hover:bg-black/10 rounded-full backdrop-blur-md transition-all group border border-black/5"
-      >
-        <X className="w-6 h-6 text-black group-hover:rotate-90 transition-transform" />
-      </button>
+      <div className="fixed top-8 right-8 z-[110] flex gap-4">
+        <button 
+          onClick={onClose}
+          className="h-10 px-4 bg-white/80 hover:bg-white rounded-full backdrop-blur-md transition-all flex items-center gap-2 text-black text-[10px] font-bold uppercase tracking-widest border border-black/5 shadow-lg"
+        >
+          <Home className="w-3 h-3" />
+          Return to Home
+        </button>
+        <button 
+          onClick={onClose}
+          className="p-2 bg-black/5 hover:bg-black/10 rounded-full backdrop-blur-md transition-all group border border-black/5"
+        >
+          <X className="w-6 h-6 text-black group-hover:rotate-90 transition-transform" />
+        </button>
+      </div>
 
       <AnimatePresence mode="wait">
         {scene === 'intro' && (
@@ -534,9 +543,9 @@ export default function ForestShowcase({ projectId, onClose }: ForestShowcasePro
                       <h3 className="text-sm font-medium text-black/60 tracking-widest uppercase">HANDBOOK Ⅰ</h3>
                     </motion.div>
                     
-                    <div className="flex justify-center w-full" style={{ perspective: '2500px' }}>
+                    <div className="flex justify-start md:justify-center w-full overflow-x-auto md:overflow-x-visible no-scrollbar px-8 md:px-0" style={{ perspective: '2500px' }}>
                       <motion.div 
-                        className="flex shadow-[0_50px_100px_rgba(0,0,0,0.15)]"
+                        className="flex shadow-[0_50px_100px_rgba(0,0,0,0.15)] min-w-max md:min-w-0"
                         initial={{ rotateX: 10 }}
                         whileHover={{ rotateX: 0 }}
                       >
@@ -547,13 +556,13 @@ export default function ForestShowcase({ projectId, onClose }: ForestShowcasePro
                           whileHover={{ rotateY: 5 }}
                           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                           style={{ transformOrigin: 'right' }}
-                          className="w-[300px] md:w-[400px] aspect-[3/4] bg-white border-r border-black/5 overflow-hidden relative group"
+                          className="w-[260px] md:w-[400px] aspect-[3/4] bg-white border-r border-black/5 overflow-hidden relative group"
                         >
                           <img src={content.brochure?.upper[0]} className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" alt="Upper 1" />
                           <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors" />
                         </motion.div>
                         {/* Center Panel */}
-                        <div className="w-[300px] md:w-[400px] aspect-[3/4] bg-white overflow-hidden z-10 relative group">
+                        <div className="w-[260px] md:w-[400px] aspect-[3/4] bg-white overflow-hidden z-10 relative group">
                           <img src={content.brochure?.upper[1]} className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" alt="Upper 2" />
                           <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors" />
                         </div>
@@ -564,7 +573,7 @@ export default function ForestShowcase({ projectId, onClose }: ForestShowcasePro
                           whileHover={{ rotateY: -5 }}
                           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                           style={{ transformOrigin: 'left' }}
-                          className="w-[300px] md:w-[400px] aspect-[3/4] bg-white border-l border-black/5 overflow-hidden relative group"
+                          className="w-[260px] md:w-[400px] aspect-[3/4] bg-white border-l border-black/5 overflow-hidden relative group"
                         >
                           <img src={content.brochure?.upper[2]} className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" alt="Upper 3" />
                           <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors" />
@@ -584,9 +593,9 @@ export default function ForestShowcase({ projectId, onClose }: ForestShowcasePro
                       <h3 className="text-sm font-medium text-black/60 tracking-widest uppercase">HANDBOOK Ⅱ</h3>
                     </motion.div>
 
-                    <div className="flex justify-center w-full" style={{ perspective: '2500px' }}>
+                    <div className="flex justify-start md:justify-center w-full overflow-x-auto md:overflow-x-visible no-scrollbar px-8 md:px-0" style={{ perspective: '2500px' }}>
                       <motion.div 
-                        className="flex shadow-[0_50px_100px_rgba(0,0,0,0.15)]"
+                        className="flex shadow-[0_50px_100px_rgba(0,0,0,0.15)] min-w-max md:min-w-0"
                         initial={{ rotateX: -10 }}
                         whileHover={{ rotateX: 0 }}
                       >
@@ -597,13 +606,13 @@ export default function ForestShowcase({ projectId, onClose }: ForestShowcasePro
                           whileHover={{ rotateY: 5 }}
                           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                           style={{ transformOrigin: 'right' }}
-                          className="w-[300px] md:w-[400px] aspect-[3/4] bg-white border-r border-black/5 overflow-hidden relative group"
+                          className="w-[260px] md:w-[400px] aspect-[3/4] bg-white border-r border-black/5 overflow-hidden relative group"
                         >
                           <img src={content.brochure?.lower[0]} className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" alt="Lower 1" />
                           <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors" />
                         </motion.div>
                         {/* Center Panel */}
-                        <div className="w-[300px] md:w-[400px] aspect-[3/4] bg-white overflow-hidden z-10 relative group">
+                        <div className="w-[260px] md:w-[400px] aspect-[3/4] bg-white overflow-hidden z-10 relative group">
                           <img src={content.brochure?.lower[1]} className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" alt="Lower 2" />
                           <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors" />
                         </div>
@@ -614,7 +623,7 @@ export default function ForestShowcase({ projectId, onClose }: ForestShowcasePro
                           whileHover={{ rotateY: -5 }}
                           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                           style={{ transformOrigin: 'left' }}
-                          className="w-[300px] md:w-[400px] aspect-[3/4] bg-white border-l border-black/5 overflow-hidden relative group"
+                          className="w-[260px] md:w-[400px] aspect-[3/4] bg-white border-l border-black/5 overflow-hidden relative group"
                         >
                           <img src={content.brochure?.lower[2]} className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" alt="Lower 3" />
                           <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors" />
