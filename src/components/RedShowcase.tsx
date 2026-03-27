@@ -296,16 +296,19 @@ export default function RedShowcase({ onClose }: RedShowcaseProps) {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-white w-full max-w-4xl max-h-[90vh] rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl"
+              className="bg-white w-full max-w-4xl h-[90vh] md:h-[80vh] rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Image Section */}
-              <div className="flex-1 bg-white flex items-center justify-center p-4 md:p-8">
+              <div 
+                className="h-[40%] md:h-auto md:flex-1 bg-white flex items-center justify-center p-4 md:p-8 cursor-zoom-in flex-shrink-0"
+                onClick={() => setFullScreenImage(selectedPost.url)}
+              >
                 <img src={selectedPost.url} className="max-w-full max-h-full object-contain rounded-xl" alt={selectedPost.title} />
               </div>
 
               {/* Content Section */}
-              <div className="w-full md:w-[400px] flex flex-col bg-white border-l border-gray-100">
+              <div className="flex-1 md:w-[400px] flex flex-col bg-white border-l border-gray-100 overflow-hidden">
                 {/* Post Header */}
                 <div className="p-4 flex items-center justify-between border-b border-gray-50">
                   <div className="flex items-center gap-3">

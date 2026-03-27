@@ -61,10 +61,10 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="relative z-10 w-full h-full overflow-y-auto snap-y no-scrollbar"
+            className="relative z-10 w-full h-full overflow-y-auto no-scrollbar"
           >
             {/* Page 1: Hero */}
-            <section className="relative w-full h-screen snap-start flex items-center justify-center px-12 md:px-24 bg-[#fcfcfc]">
+            <section className="relative w-full h-screen flex items-center justify-center px-12 md:px-24 bg-[#fcfcfc]">
               {/* Background Line Art */}
               <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] mix-blend-multiply" />
@@ -132,7 +132,7 @@ export default function App() {
             </section>
 
             {/* Page 2: Introduction */}
-            <section className="relative w-full h-screen snap-start flex items-center justify-center px-8 md:px-24 bg-[#f5f5f5] border-y border-dark-gray/5 overflow-hidden">
+            <section className="relative w-full h-screen flex items-center justify-center px-8 md:px-24 bg-[#f5f5f5] border-y border-dark-gray/5 overflow-hidden">
               <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 items-start gap-8 lg:gap-16 pt-24 md:pt-20">
                 <div className="relative h-[250px] md:h-[400px] flex items-start justify-center">
                   <div className="relative w-full max-w-xs md:max-w-md flex justify-center">
@@ -179,7 +179,7 @@ export default function App() {
             </section>
 
             {/* Page 3: About Me */}
-            <section className="relative w-full h-screen snap-start flex flex-col items-center justify-center px-8 md:px-24 bg-[#fafafa] overflow-hidden pt-24 md:pt-32 pb-64 md:pb-48">
+            <section className="relative w-full h-screen flex flex-col items-center justify-center px-8 md:px-24 bg-[#fafafa] overflow-hidden pt-24 md:pt-32 pb-64 md:pb-48">
               <div className="max-w-5xl w-full flex flex-col items-center justify-center gap-4 md:gap-8 text-center">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}

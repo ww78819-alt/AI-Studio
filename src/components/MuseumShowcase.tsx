@@ -46,10 +46,19 @@ const MacOSWindow: React.FC<{
       <div className="w-full h-full bg-[#ebebeb] rounded-lg shadow-2xl border border-black/20 overflow-hidden flex flex-col">
         {/* Title Bar */}
         <div className="window-title-bar h-7 bg-gradient-to-b from-[#f6f6f6] to-[#d1d1d1] flex items-center px-3 gap-2 border-b border-black/10 select-none cursor-default">
-          <div className="flex gap-2">
+          <div className="flex gap-2 items-center">
             <button onClick={onClose} className="w-3 h-3 rounded-full bg-[#ff5f57] border border-[#e0443e] flex items-center justify-center group">
               <X className="w-2 h-2 text-black/40 opacity-0 group-hover:opacity-100" />
             </button>
+            {minimal && (
+              <button 
+                onClick={onClose}
+                className="flex items-center gap-1 text-[9px] font-bold text-black/50 hover:text-black transition-colors ml-1"
+              >
+                <ChevronLeft className="w-2.5 h-2.5" />
+                <span>返回</span>
+              </button>
+            )}
             {!minimal && (
               <>
                 <button className="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123] flex items-center justify-center group">
@@ -64,7 +73,7 @@ const MacOSWindow: React.FC<{
           <div className="flex-1 text-center text-[11px] font-medium text-black/70 tracking-tight truncate px-2">
             {title}
           </div>
-          {minimal && <div className="w-12" />} {/* Spacer to balance the single button */}
+          {minimal && <div className="w-16" />} {/* Adjusted spacer */}
         </div>
         {/* Content */}
         <div className="flex-1 overflow-auto bg-white relative">
