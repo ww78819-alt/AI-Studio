@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
+
+@theme {
+  --font-sans: "Inter", "HarmonyOS Sans SC", "PingFang SC", system-ui, sans-serif;
+  --color-warm-white: #FDFCFB;
+  --color-dark-gray: #333333;
+  --color-glass-bg: rgba(255, 255, 255, 0.4);
+  --color-glass-border: rgba(255, 255, 255, 0.2);
+}
+
+@layer base {
+  body {
+    @apply bg-warm-white text-dark-gray font-sans overflow-hidden antialiased;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-xl bg-glass-bg border border-glass-border shadow-2xl;
+  }
+  
+  .apple-card {
+    @apply rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-2xl;
+  }
+
+  .snap-y {
+    scroll-snap-type: y mandatory;
+  }
+  .snap-start {
+    scroll-snap-align: start;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom scrollbar for glass windows */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
