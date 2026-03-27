@@ -143,23 +143,23 @@ const GuidebookBooklet: React.FC<{ images: string[]; onClose: () => void }> = ({
         className="relative flex items-center justify-center w-full h-full"
       >
         {isCover ? (
-          <div className="relative w-full max-w-[400px] aspect-[1/1.414] bg-white shadow-[20px_0_50px_rgba(0,0,0,0.3)] rounded-r-lg overflow-hidden border border-black/10 origin-left">
-            <img src={images[0]} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+          <div className="relative w-full max-w-[350px] aspect-[1/1.414] bg-white shadow-[20px_0_50px_rgba(0,0,0,0.3)] rounded-r-lg overflow-hidden border border-black/10 origin-left">
+            <img src={images[0]} className="w-full h-full object-contain" referrerPolicy="no-referrer" />
             <div className="absolute inset-y-0 left-0 w-4 bg-gradient-to-r from-black/20 to-transparent" />
           </div>
         ) : isBack ? (
-          <div className="relative w-full max-w-[400px] aspect-[1/1.414] bg-white shadow-[-20px_0_50px_rgba(0,0,0,0.3)] rounded-l-lg overflow-hidden border border-black/10 origin-right">
-            <img src={images[images.length - 1]} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+          <div className="relative w-full max-w-[350px] aspect-[1/1.414] bg-white shadow-[-20px_0_50px_rgba(0,0,0,0.3)] rounded-l-lg overflow-hidden border border-black/10 origin-right">
+            <img src={images[images.length - 1]} className="w-full h-full object-contain" referrerPolicy="no-referrer" />
             <div className="absolute inset-y-0 right-0 w-4 bg-gradient-to-l from-black/20 to-transparent" />
           </div>
         ) : (
-          <div className="relative flex w-full max-w-[900px] aspect-[1.414/1] shadow-[0_30px_60px_rgba(0,0,0,0.4)] rounded-lg overflow-hidden bg-white border border-black/10">
+          <div className="relative flex w-full max-w-[800px] aspect-[1.414/1] shadow-[0_30px_60px_rgba(0,0,0,0.4)] rounded-lg overflow-hidden bg-white border border-black/10">
             <div className="w-1/2 h-full border-r border-black/5 relative">
-              <img src={images[1 + (currentIndex - 1) * 2]} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+              <img src={images[1 + (currentIndex - 1) * 2]} className="w-full h-full object-contain" referrerPolicy="no-referrer" />
               <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-black/10 to-transparent" />
             </div>
             <div className="w-1/2 h-full relative">
-              <img src={images[2 + (currentIndex - 1) * 2]} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+              <img src={images[2 + (currentIndex - 1) * 2]} className="w-full h-full object-contain" referrerPolicy="no-referrer" />
               <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-black/10 to-transparent" />
             </div>
             {/* Spine line */}
@@ -179,8 +179,8 @@ const GuidebookBooklet: React.FC<{ images: string[]; onClose: () => void }> = ({
         <X className="w-6 h-6" />
       </button>
 
-      <div className="w-full h-full max-w-6xl flex flex-col items-center justify-center gap-8">
-        <div className="relative w-full flex-1 flex items-center justify-center perspective-3000 max-h-[75vh]">
+      <div className="w-full h-full max-w-6xl flex flex-col items-center justify-center gap-10 pt-32 pb-12">
+        <div className="relative w-full flex-1 flex items-center justify-center perspective-3000 max-h-[55vh]">
           <AnimatePresence mode="wait" custom={direction}>
             {renderView()}
           </AnimatePresence>
@@ -192,26 +192,26 @@ const GuidebookBooklet: React.FC<{ images: string[]; onClose: () => void }> = ({
           </div>
         </div>
 
-        <div className="flex items-center gap-8 bg-white/5 backdrop-blur-xl px-8 py-4 rounded-full border border-white/10 shadow-2xl">
+        <div className="flex items-center gap-6 bg-white/5 backdrop-blur-xl px-6 py-2.5 rounded-full border border-white/10 shadow-2xl">
           <button 
             onClick={prevView}
             disabled={currentIndex === 0}
-            className={`p-2 rounded-full text-white transition-all ${currentIndex === 0 ? 'opacity-10 cursor-not-allowed' : 'hover:bg-white/10 hover:scale-110 active:scale-90'}`}
+            className={`p-1.5 rounded-full text-white transition-all ${currentIndex === 0 ? 'opacity-10 cursor-not-allowed' : 'hover:bg-white/10 hover:scale-110 active:scale-90'}`}
           >
-            <ChevronLeft className="w-8 h-8" />
+            <ChevronLeft className="w-6 h-6" />
           </button>
           <div className="flex flex-col items-center">
-            <div className="text-white/40 text-[9px] font-black tracking-[0.4em] uppercase mb-1">Guidebook</div>
-            <div className="text-white text-sm font-black tracking-widest">
-              {currentIndex + 1} <span className="text-white/20 mx-2">/</span> {totalViews}
+            <div className="text-white/40 text-[7px] font-black tracking-[0.4em] uppercase mb-0.5">Guidebook</div>
+            <div className="text-white text-xs font-black tracking-widest">
+              {currentIndex + 1} <span className="text-white/20 mx-1.5">/</span> {totalViews}
             </div>
           </div>
           <button 
             onClick={nextView}
             disabled={currentIndex === totalViews - 1}
-            className={`p-2 rounded-full text-white transition-all ${currentIndex === totalViews - 1 ? 'opacity-10 cursor-not-allowed' : 'hover:bg-white/10 hover:scale-110 active:scale-90'}`}
+            className={`p-1.5 rounded-full text-white transition-all ${currentIndex === totalViews - 1 ? 'opacity-10 cursor-not-allowed' : 'hover:bg-white/10 hover:scale-110 active:scale-90'}`}
           >
-            <ChevronRight className="w-8 h-8" />
+            <ChevronRight className="w-6 h-6" />
           </button>
         </div>
       </div>
