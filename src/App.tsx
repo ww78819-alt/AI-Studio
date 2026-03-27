@@ -179,7 +179,7 @@ export default function App() {
             </section>
 
             {/* Page 3: About Me */}
-            <section className="relative w-full h-screen snap-start flex flex-col items-center justify-center px-8 md:px-24 bg-[#fafafa] overflow-hidden pt-24 md:pt-32 pb-48 md:pb-48">
+            <section className="relative w-full h-screen snap-start flex flex-col items-center justify-center px-8 md:px-24 bg-[#fafafa] overflow-hidden pt-24 md:pt-32 pb-64 md:pb-48">
               <div className="max-w-5xl w-full flex flex-col items-center justify-center gap-4 md:gap-8 text-center">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}

@@ -16,10 +16,12 @@ const MacOSWindow: React.FC<{
   defaultSize?: { width: number | string; height: number | string };
   defaultPosition?: { x: number; y: number };
   className?: string;
-}> = ({ title, children, onClose, defaultSize = { width: '80%', height: '80%' }, defaultPosition = { x: 50, y: 50 }, className = "" }) => {
+  minimal?: boolean;
+}> = ({ title, children, onClose, defaultSize = { width: '80%', height: '80%' }, defaultPosition = { x: 50, y: 50 }, className = "", minimal = false }) => {
   const [isMaximized, setIsMaximized] = useState(false);
 
   const handleMaximize = () => {
+    if (minimal) return;
     setIsMaximized(!isMaximized);
   };
 
@@ -48,16 +50,21 @@ const MacOSWindow: React.FC<{
             <button onClick={onClose} className="w-3 h-3 rounded-full bg-[#ff5f57] border border-[#e0443e] flex items-center justify-center group">
               <X className="w-2 h-2 text-black/40 opacity-0 group-hover:opacity-100" />
             </button>
-            <button className="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123] flex items-center justify-center group">
-              <Minus className="w-2 h-2 text-black/40 opacity-0 group-hover:opacity-100" />
-            </button>
-            <button onClick={handleMaximize} className="w-3 h-3 rounded-full bg-[#28c840] border border-[#1aab29] flex items-center justify-center group">
-              <Maximize2 className="w-2 h-2 text-black/40 opacity-0 group-hover:opacity-100" />
-            </button>
+            {!minimal && (
+              <>
+                <button className="w-3 h-3 rounded-full bg-[#ffbd2e] border border-[#dea123] flex items-center justify-center group">
+                  <Minus className="w-2 h-2 text-black/40 opacity-0 group-hover:opacity-100" />
+                </button>
+                <button onClick={handleMaximize} className="w-3 h-3 rounded-full bg-[#28c840] border border-[#1aab29] flex items-center justify-center group">
+                  <Maximize2 className="w-2 h-2 text-black/40 opacity-0 group-hover:opacity-100" />
+                </button>
+              </>
+            )}
           </div>
-          <div className="flex-1 text-center text-[11px] font-medium text-black/70 tracking-tight">
+          <div className="flex-1 text-center text-[11px] font-medium text-black/70 tracking-tight truncate px-2">
             {title}
           </div>
+          {minimal && <div className="w-12" />} {/* Spacer to balance the single button */}
         </div>
         {/* Content */}
         <div className="flex-1 overflow-auto bg-white relative">
@@ -454,6 +461,7 @@ export default function MuseumShowcase({ onClose }: MuseumShowcaseProps) {
                       <MacOSWindow 
                         title={`${hotspots.find(h => h.id === activeOverlay)?.label}.png`}
                         onClose={() => setActiveOverlay(null)}
+                        minimal={true}
                         defaultSize={{ width: '100%', height: '100%' }}
                         defaultPosition={{ x: 0, y: 0 }}
                       >

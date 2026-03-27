@@ -22,8 +22,8 @@ export default function Window({ isOpen, onClose, title, children, className = "
           className={`fixed inset-4 md:inset-10 lg:inset-20 glass rounded-3xl z-40 flex flex-col overflow-hidden ${className}`}
         >
           {/* Window Header */}
-          <div className="flex flex-col md:flex-row items-center justify-between px-6 py-4 border-b border-white/20 gap-2 md:gap-0">
-            <div className="flex items-center gap-2 self-start md:self-center">
+          <div className="flex items-center justify-between px-4 md:px-6 py-3 md:py-4 border-b border-white/20">
+            <div className="flex items-center gap-1.5 md:gap-2">
               <button onClick={onClose} className="w-3 h-3 rounded-full bg-red-400 hover:bg-red-500 transition-colors flex items-center justify-center group">
                 <X className="w-2 h-2 text-red-900 opacity-0 group-hover:opacity-100" />
               </button>
@@ -34,10 +34,10 @@ export default function Window({ isOpen, onClose, title, children, className = "
                 <Maximize2 className="w-2 h-2 text-green-900 opacity-0 group-hover:opacity-100" />
               </div>
             </div>
-            <div className="text-[10px] md:text-sm font-medium text-dark-gray/60 serif uppercase tracking-widest whitespace-nowrap overflow-hidden text-ellipsis max-w-[200px] md:max-w-none">
+            <div className="flex-1 text-center text-[10px] md:text-sm font-medium text-dark-gray/60 serif uppercase tracking-widest truncate px-2">
               {title}
             </div>
-            <div className="hidden md:block w-16" /> {/* Spacer */}
+            <div className="w-12 md:w-16" /> {/* Spacer to balance the buttons */}
           </div>
 
           {/* Window Content */}
