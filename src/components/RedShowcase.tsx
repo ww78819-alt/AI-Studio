@@ -114,7 +114,7 @@ export default function RedShowcase({ onClose }: RedShowcaseProps) {
             exit={{ opacity: 0 }}
             className="relative w-full h-full flex flex-col md:items-center md:justify-center bg-white overflow-y-auto md:overflow-hidden"
           >
-            <div className="relative w-full h-[70vh] md:h-full flex items-center justify-center flex-shrink-0">
+            <div className="relative w-full h-[70vh] md:h-full flex items-center justify-center flex-shrink-0 mt-[23vh] md:mt-0">
               <img 
                 src="https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/shop.png" 
                 className="w-full h-full object-contain"
@@ -122,7 +122,7 @@ export default function RedShowcase({ onClose }: RedShowcaseProps) {
               />
             </div>
             
-            <div className="relative md:absolute md:bottom-12 md:left-12 lg:bottom-20 lg:left-20 flex flex-col items-center gap-3 z-10 py-4 md:py-0">
+            <div className="relative md:absolute md:bottom-32 md:left-12 lg:bottom-40 lg:left-20 flex flex-col items-center gap-3 z-10 -mt-12 pb-16 md:mt-0 md:py-0">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -296,7 +296,7 @@ export default function RedShowcase({ onClose }: RedShowcaseProps) {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-white w-full max-w-4xl h-[90vh] md:h-[80vh] rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl"
+              className="bg-white w-full max-w-lg md:max-w-4xl h-[92vh] md:h-[80vh] rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Image Section */}

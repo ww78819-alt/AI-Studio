@@ -308,14 +308,6 @@ export default function MuseumShowcase({ onClose }: MuseumShowcaseProps) {
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black overflow-hidden font-sans">
       {/* Navigation Buttons */}
       <div className="absolute top-8 left-8 flex flex-col md:flex-row gap-4 z-[100]">
-        <button 
-          onClick={onClose}
-          className="h-10 px-4 rounded-md bg-white/10 hover:bg-white/20 flex items-center gap-2 text-white/80 transition-all border border-white/10 text-[10px] font-bold uppercase tracking-widest"
-        >
-          <Home className="w-3 h-3" />
-          Return to Home
-        </button>
-
         {scene === 'museum' && !activeOverlay && (
           <button 
             onClick={handleBack}

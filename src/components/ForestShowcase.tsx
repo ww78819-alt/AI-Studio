@@ -21,7 +21,7 @@ const GameProgressBar = ({ progress }: { progress: number }) => {
   ];
 
   return (
-    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[1200px] max-w-[95vw] h-8 bg-white/10 rounded-full backdrop-blur-xl border border-white/20 overflow-hidden z-[500] shadow-2xl flex items-center">
+    <div className="fixed bottom-12 left-1/2 -translate-x-1/2 w-[1200px] max-w-[95vw] h-8 bg-white/10 rounded-full backdrop-blur-xl border border-white/20 overflow-hidden z-[500] shadow-2xl flex items-center">
       <div className="absolute inset-0 flex overflow-hidden items-center">
         <motion.div 
           className="flex gap-40 px-20 items-center"
@@ -132,14 +132,7 @@ export default function ForestShowcase({ projectId, onClose }: ForestShowcasePro
       className="fixed inset-0 z-[100] bg-[#fcfcfc] overflow-hidden"
     >
       {/* Direct Exit Button */}
-      <div className="fixed top-8 right-8 z-[110] flex gap-4">
-        <button 
-          onClick={onClose}
-          className="h-10 px-4 bg-white/80 hover:bg-white rounded-full backdrop-blur-md transition-all flex items-center gap-2 text-black text-[10px] font-bold uppercase tracking-widest border border-black/5 shadow-lg"
-        >
-          <Home className="w-3 h-3" />
-          Return to Home
-        </button>
+      <div className="fixed top-8 right-8 z-[110]">
         <button 
           onClick={onClose}
           className="p-2 bg-black/5 hover:bg-black/10 rounded-full backdrop-blur-md transition-all group border border-black/5"
@@ -156,7 +149,7 @@ export default function ForestShowcase({ projectId, onClose }: ForestShowcasePro
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => triggerTransition('scene1')}
-            className="relative w-full h-full flex flex-col items-center justify-center bg-[#0a0a0a] cursor-pointer group"
+            className="relative w-full h-full flex flex-col items-center justify-center bg-white cursor-pointer group"
           >
             <div className="absolute inset-0 z-0">
               <img 
@@ -164,14 +157,14 @@ export default function ForestShowcase({ projectId, onClose }: ForestShowcasePro
                 className="w-full h-full object-contain transition-transform duration-1000 group-hover:scale-[1.02]"
                 alt="Cover"
               />
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors" />
+              <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors" />
             </div>
             
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
-              className="absolute bottom-12 text-white/20 text-[10px] font-bold uppercase tracking-[0.5em] pointer-events-none"
+              className="absolute bottom-12 text-black/20 text-[10px] font-bold uppercase tracking-[0.5em] pointer-events-none"
             >
               Click to Enter
             </motion.div>
@@ -184,7 +177,7 @@ export default function ForestShowcase({ projectId, onClose }: ForestShowcasePro
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="relative w-full h-full flex items-center justify-center bg-[#f8f8f8]"
+            className="relative w-full h-full flex items-center justify-center bg-white"
           >
             {isBrandDesign ? (
               <motion.div
@@ -201,7 +194,7 @@ export default function ForestShowcase({ projectId, onClose }: ForestShowcasePro
               </motion.div>
             ) : (
               /* Lianshan Scene 1 with background and tickets */
-              <div className="relative w-full h-full bg-[#f8f8f8] flex items-center justify-center">
+              <div className="relative w-full h-full bg-white flex items-center justify-center">
                 <img 
                   src={content.scene1} 
                   className="w-full h-full object-contain"
@@ -209,7 +202,7 @@ export default function ForestShowcase({ projectId, onClose }: ForestShowcasePro
                 />
                 
                 {/* Floating Tickets */}
-                <div className="absolute top-6 left-6 md:top-12 md:left-12 z-30 flex flex-col gap-6">
+                <div className="absolute top-24 left-6 md:top-32 md:left-12 z-30 flex flex-col gap-6">
                   {content.tickets?.map((src: string, i: number) => (
                     <motion.div
                       key={i}
@@ -647,10 +640,10 @@ export default function ForestShowcase({ projectId, onClose }: ForestShowcasePro
             {/* Back Button */}
             <button 
               onClick={() => isBrandDesign ? setScene('platform-select') : setScene('scene1')}
-              className="fixed bottom-24 left-8 z-50 flex items-center gap-2 px-6 py-3 bg-white/80 hover:bg-white rounded-full backdrop-blur-md transition-all group border border-black/5 shadow-lg"
+              className={`fixed ${isBrandDesign ? 'bottom-12 left-8' : 'top-8 left-8'} z-50 flex items-center gap-2 ${isBrandDesign ? 'p-3' : 'px-6 py-3'} bg-white/80 hover:bg-white rounded-full backdrop-blur-md transition-all group border border-black/5 shadow-lg`}
             >
-              <ArrowLeft className="w-4 h-4 text-black group-hover:-translate-x-1 transition-transform" />
-              <span className="text-black text-sm font-bold tracking-widest uppercase">返回</span>
+              <ArrowLeft className={`${isBrandDesign ? 'w-5 h-5' : 'w-4 h-4'} text-black group-hover:-translate-x-1 transition-transform`} />
+              {!isBrandDesign && <span className="text-black text-sm font-bold tracking-widest uppercase">返回</span>}
             </button>
           </motion.div>
         )}

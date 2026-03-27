@@ -53,7 +53,7 @@ export const PERSONAL_INFO = {
   title: 'Architectural & Graphic Designer',
   education: '香港大学 建筑学（建筑保护设计与管理）专业 研究生',
   contact: {
-    phone: '18816899207',
+    phone: '+86 18816899207',
     email: 'zhong_jingwen@outlook.com',
     location: '广东广州'
   },
