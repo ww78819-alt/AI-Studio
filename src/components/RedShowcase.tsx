@@ -25,7 +25,7 @@ export default function RedShowcase({ onClose }: RedShowcaseProps) {
   const posts: Post[] = [
     { 
       id: 1, 
-      url: 'https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/Gemini_Generated_Image_tftxg4tftxg4tftx.png', 
+      url: 'https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/Gemini_Generated_Image_tftxg4tftxg4tftx.png', 
       title: '“椰”风一夏，Summer限定来袭！', 
       description: '清爽的椰香与细腻的奶油完美融合，仿佛置身于夏日的沙滩。这是我们为这个夏天特别准备的限定款，快来尝尝吧！🥥✨ #夏日限定 #日式甜点 #椰子控',
       likes: '1.2w',
@@ -38,7 +38,7 @@ export default function RedShowcase({ onClose }: RedShowcaseProps) {
     },
     { 
       id: 2, 
-      url: 'https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/Gemini_Generated_Image_a3bvrqa3bvrqa3bv.png', 
+      url: 'https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/Gemini_Generated_Image_a3bvrqa3bvrqa3bv.png', 
       title: '“芒芒”人海，找到我的可可', 
       description: '当新鲜芒果遇上浓郁可可，酸甜与苦甜的奇妙碰撞。每一口都是惊喜，在这个人海中，你找到属于你的那份甜蜜了吗？🥭🍫',
       likes: '8.5k',
@@ -51,7 +51,7 @@ export default function RedShowcase({ onClose }: RedShowcaseProps) {
     },
     { 
       id: 3, 
-      url: 'https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/Gemini_Generated_Image_gia3szgia3szgia3.png', 
+      url: 'https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/Gemini_Generated_Image_gia3szgia3szgia3.png', 
       title: '下午茶时光，我pick草莓🍓', 
       description: '粉粉嫩嫩的草莓季，谁能拒绝这份少女心呢？新鲜草莓搭配轻盈慕斯，让你的下午茶时光充满甜蜜气息。🍓🍰',
       likes: '3.4k',
@@ -64,7 +64,7 @@ export default function RedShowcase({ onClose }: RedShowcaseProps) {
     },
     { 
       id: 4, 
-      url: 'https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/Generated%20Image%20March%2025%2C%202026%20-%209_08PM.png', 
+      url: 'https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/Generated%20Image%20March%2025%2C%202026%20-%209_08PM.png', 
       title: 'EAT\'ie为Sweetie专门设计的包装盒', 
       description: '好的甜点需要好的包装。我们精心设计了这款礼盒，希望每一份送出的礼物都能传递最真挚的温暖。🎁✨ #包装设计 #礼品推荐',
       likes: '5.6k',
@@ -77,7 +77,7 @@ export default function RedShowcase({ onClose }: RedShowcaseProps) {
     },
     { 
       id: 5, 
-      url: 'https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/Generated%20Image%20March%2025%2C%202026%20-%208_39PM.png', 
+      url: 'https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/Generated%20Image%20March%2025%2C%202026%20-%208_39PM.png', 
       title: 'EAT\'ie 配方大公开！喵也喜欢的糕糕', 
       description: '很多人问我们的糕点为什么这么软糯，今天就来揭秘！选用顶级食材，坚持手工制作，连家里的喵星人都忍不住凑过来闻闻呢。🐾🍰',
       likes: '2.1w',
@@ -112,29 +112,45 @@ export default function RedShowcase({ onClose }: RedShowcaseProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="relative w-full h-full flex flex-col items-center justify-center bg-white"
+            className="relative w-full h-full flex flex-col md:items-center md:justify-center bg-white overflow-y-auto md:overflow-hidden"
           >
-            <div className="relative w-full h-full flex items-center justify-center">
+            <div className="relative w-full h-[70vh] md:h-full flex items-center justify-center flex-shrink-0">
               <img 
-                src="https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/shop.png" 
+                src="https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/shop.png" 
                 className="w-full h-full object-contain"
                 alt="Shop Cover"
               />
             </div>
             
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setScene('scene2')}
-              className="absolute bottom-12 right-12 w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white shadow-2xl group bg-white"
-            >
-              <img 
-                src="https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/logo(1).png" 
-                className="w-full h-full object-cover"
-                alt="Logo Button"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
-            </motion.button>
+            <div className="relative md:absolute md:bottom-12 md:left-12 lg:bottom-20 lg:left-20 flex flex-col items-center gap-3 z-10 py-4 md:py-0">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setScene('scene2')}
+                className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white shadow-2xl group bg-white relative"
+              >
+                <img 
+                  src="https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/logo(1).png" 
+                  className="w-full h-full object-cover"
+                  alt="Logo Button"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+              </motion.button>
+              <motion.span 
+                animate={{ 
+                  opacity: [0.4, 1, 0.4],
+                  scale: [0.98, 1, 0.98]
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="text-dark-gray font-black text-[10px] md:text-xs tracking-[0.2em] uppercase"
+              >
+                Click Me!
+              </motion.span>
+            </div>
           </motion.div>
         )}
 
@@ -151,10 +167,10 @@ export default function RedShowcase({ onClose }: RedShowcaseProps) {
               {/* Header Background */}
               <div 
                 className="relative h-64 md:h-80 overflow-hidden cursor-pointer"
-                onClick={() => setFullScreenImage('https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/shop.png')}
+                onClick={() => setFullScreenImage('https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/shop.png')}
               >
                 <img 
-                  src="https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/shop.png" 
+                  src="https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/shop.png" 
                   className="w-full h-full object-cover blur-[2px] scale-110"
                   alt="Profile Background"
                 />
@@ -176,10 +192,10 @@ export default function RedShowcase({ onClose }: RedShowcaseProps) {
                   <div className="relative">
                     <div 
                       className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white overflow-hidden shadow-lg bg-white cursor-pointer"
-                      onClick={() => setFullScreenImage('https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/logo(1).png')}
+                      onClick={() => setFullScreenImage('https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/logo(1).png')}
                     >
                       <img 
-                        src="https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/logo(1).png" 
+                        src="https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/logo(1).png" 
                         className="w-full h-full object-cover"
                         alt="Avatar"
                       />
@@ -248,7 +264,7 @@ export default function RedShowcase({ onClose }: RedShowcaseProps) {
                       <div className="flex justify-between items-center">
                         <div className="flex items-center gap-1.5">
                           <div className="w-4 h-4 rounded-full overflow-hidden">
-                            <img src="https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/logo(1).png" className="w-full h-full object-cover" alt="mini-avatar" />
+                            <img src="https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/logo(1).png" className="w-full h-full object-cover" alt="mini-avatar" />
                           </div>
                           <span className="text-[9px] text-gray-400 font-medium">EAT'ie</span>
                         </div>
@@ -294,7 +310,7 @@ export default function RedShowcase({ onClose }: RedShowcaseProps) {
                 <div className="p-4 flex items-center justify-between border-b border-gray-50">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full overflow-hidden border border-gray-100">
-                      <img src="https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/logo(1).png" className="w-full h-full object-cover" alt="avatar" />
+                      <img src="https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/logo(1).png" className="w-full h-full object-cover" alt="avatar" />
                     </div>
                     <div>
                       <p className="text-sm font-bold text-gray-900">EAT'ie 日式甜点店</p>

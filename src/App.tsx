@@ -15,7 +15,7 @@ export default function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [selectedShowcase, setSelectedShowcase] = useState<Project | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [audio] = useState(new Audio('https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/Stardew%20Valley%20Overture.m4a'));
+  const [audio] = useState(new Audio('https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/Stardew%20Valley%20Overture.m4a'));
 
   useEffect(() => {
     setIsLoaded(true);
@@ -84,7 +84,7 @@ export default function App() {
                 >
                   <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white shadow-2xl">
                     <img 
-                      src="https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/微信图片_20260327004259_308_196.jpg" 
+                      src="https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/微信图片_20260327004259_308_196.jpg" 
                       className="w-full h-full object-cover object-[center_70%]"
                       alt="Iris Zhong"
                     />
@@ -137,9 +137,9 @@ export default function App() {
                 <div className="relative h-[250px] md:h-[400px] flex items-start justify-center">
                   <div className="relative w-full max-w-xs md:max-w-md flex justify-center">
                     {[
-                      'https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/微信图片_20260327004248_304_196.jpg',
-                      'https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/微信图片_20260327004253_306_196.jpg',
-                      'https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/微信图片_20260327004257_307_196.jpg'
+                      'https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/微信图片_20260327004248_304_196.jpg',
+                      'https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/微信图片_20260327004253_306_196.jpg',
+                      'https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/微信图片_20260327004257_307_196.jpg'
                     ].map((src, i) => (
                       <motion.div
                         key={i}
@@ -187,10 +187,10 @@ export default function App() {
                   className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 w-full max-w-xl md:max-w-3xl"
                 >
                   {[
-                    'https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/微信图片_20260327004736_311_196.jpg',
-                    'https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/微信图片_20260327004734_310_196.jpg',
-                    'https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/微信图片_20260327004732_309_196.jpg',
-                    'https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/微信图片_20260327004738_313_196.jpg'
+                    'https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/微信图片_20260327004736_311_196.jpg',
+                    'https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/微信图片_20260327004734_310_196.jpg',
+                    'https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/微信图片_20260327004732_309_196.jpg',
+                    'https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/微信图片_20260327004738_313_196.jpg'
                   ].map((src, i) => (
                     <motion.div
                       key={i}

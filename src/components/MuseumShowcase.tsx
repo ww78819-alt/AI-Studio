@@ -265,26 +265,26 @@ export default function MuseumShowcase({ onClose }: MuseumShowcaseProps) {
   };
 
   const guidebookImages = [
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/琉璃小册子（单页）_page-0001.jpg",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/琉璃小册子（单页）_page-0002.jpg",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/琉璃小册子（单页）_page-0003.jpg",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/%E7%90%89%E7%92%83%E5%B0%8F%E5%86%8C%E5%AD%90%EF%BC%88%E5%8D%95%E9%A1%B5%EF%BC%89_page-0004.jpg",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/%E7%90%89%E7%92%83%E5%B0%8F%E5%86%8C%E5%AD%90%EF%BC%88%E5%8D%95%E9%A1%B5%EF%BC%89_page-0005.jpg",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/%E7%90%89%E7%92%83%E5%B0%8F%E5%86%8C%E5%AD%90%EF%BC%88%E5%8D%95%E9%A1%B5%EF%BC%89_page-0006.jpg",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/%E7%90%89%E7%92%83%E5%B0%8F%E5%86%8C%E5%AD%90%EF%BC%88%E5%8D%95%E9%A1%B5%EF%BC%89_page-0007.jpg",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/%E7%90%89%E7%92%83%E5%B0%8F%E5%86%8C%E5%AD%90%EF%BC%88%E5%8D%95%E9%A1%B5%EF%BC%89_page-0008.jpg",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/%E7%90%89%E7%92%83%E5%B0%8F%E5%86%8C%E5%AD%90%EF%BC%88%E5%8D%95%E9%A1%B5%EF%BC%89_page-0009.jpg",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/%E7%90%89%E7%92%83%E5%B0%8F%E5%86%8C%E5%AD%90%EF%BC%88%E5%8D%95%E9%A1%B5%EF%BC%89_page-0010.jpg",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/%E7%90%89%E7%92%83%E5%B0%8F%E5%86%8C%E5%AD%90%EF%BC%88%E5%8D%95%E9%A1%B5%EF%BC%89_page-0011.jpg",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/琉璃小册子（单页）_page-0032.jpg",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/琉璃小册子（单页）_page-0033.jpg",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/琉璃小册子（单页）_page-0040.jpg"
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/琉璃小册子（单页）_page-0001.jpg",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/琉璃小册子（单页）_page-0002.jpg",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/琉璃小册子（单页）_page-0003.jpg",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/%E7%90%89%E7%92%83%E5%B0%8F%E5%86%8C%E5%AD%90%EF%BC%88%E5%8D%95%E9%A1%B5%EF%BC%89_page-0004.jpg",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/%E7%90%89%E7%92%83%E5%B0%8F%E5%86%8C%E5%AD%90%EF%BC%88%E5%8D%95%E9%A1%B5%EF%BC%89_page-0005.jpg",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/%E7%90%89%E7%92%83%E5%B0%8F%E5%86%8C%E5%AD%90%EF%BC%88%E5%8D%95%E9%A1%B5%EF%BC%89_page-0006.jpg",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/%E7%90%89%E7%92%83%E5%B0%8F%E5%86%8C%E5%AD%90%EF%BC%88%E5%8D%95%E9%A1%B5%EF%BC%89_page-0007.jpg",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/%E7%90%89%E7%92%83%E5%B0%8F%E5%86%8C%E5%AD%90%EF%BC%88%E5%8D%95%E9%A1%B5%EF%BC%89_page-0008.jpg",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/%E7%90%89%E7%92%83%E5%B0%8F%E5%86%8C%E5%AD%90%EF%BC%88%E5%8D%95%E9%A1%B5%EF%BC%89_page-0009.jpg",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/%E7%90%89%E7%92%83%E5%B0%8F%E5%86%8C%E5%AD%90%EF%BC%88%E5%8D%95%E9%A1%B5%EF%BC%89_page-0010.jpg",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/%E7%90%89%E7%92%83%E5%B0%8F%E5%86%8C%E5%AD%90%EF%BC%88%E5%8D%95%E9%A1%B5%EF%BC%89_page-0011.jpg",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/琉璃小册子（单页）_page-0032.jpg",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/琉璃小册子（单页）_page-0033.jpg",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/琉璃小册子（单页）_page-0040.jpg"
   ];
 
   const hotspots = [
-    { id: 'long-poster', x: '20%', y: '70%', label: '长海报', url: 'https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/长海报.png' },
-    { id: 'poster1', x: '40%', y: '70%', label: 'POSTERA', url: 'https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/Poster1.png' },
-    { id: 'poster', x: '60%', y: '70%', label: 'POSTERB', url: 'https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/Poster.png' },
+    { id: 'long-poster', x: '20%', y: '70%', label: '长海报', url: 'https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/长海报.png' },
+    { id: 'poster1', x: '40%', y: '70%', label: 'POSTERA', url: 'https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/Poster1.png' },
+    { id: 'poster', x: '60%', y: '70%', label: 'POSTERB', url: 'https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/Poster.png' },
     { id: 'guidebook', x: '80%', y: '70%', label: '导览手册', type: 'booklet' },
   ];
 
@@ -367,7 +367,7 @@ export default function MuseumShowcase({ onClose }: MuseumShowcaseProps) {
                       className="w-full h-full flex items-center justify-center"
                     >
                       <img 
-                        src="https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/邀请函.jpg" 
+                        src="https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/邀请函.jpg" 
                         className="max-w-full max-h-full object-contain"
                         referrerPolicy="no-referrer"
                       />
@@ -397,7 +397,7 @@ export default function MuseumShowcase({ onClose }: MuseumShowcaseProps) {
             {/* Museum Background */}
             <div className="absolute inset-0">
               <img 
-                src="https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/微信图片_20260324220830_287_196.jpg" 
+                src="https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/微信图片_20260324220830_287_196.jpg" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />

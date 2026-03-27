@@ -12,12 +12,12 @@ type Platform = 'taobao' | 'amazon';
 
 const GameProgressBar = ({ progress }: { progress: number }) => {
   const images = [
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/stand.png",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/walk.png",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/run.png",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/shock.png",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/zz.png",
-    "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/yz.png"
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/stand.png",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/walk.png",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/run.png",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/shock.png",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/zz.png",
+    "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/yz.png"
   ];
 
   return (
@@ -66,34 +66,34 @@ export default function ForestShowcase({ projectId, onClose }: ForestShowcasePro
   const getContent = () => {
     if (isBrandDesign) {
       return {
-        intro: "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/package6.png",
-        scene1: "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/invitation-02-02.png",
+        intro: "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/package6.png",
+        scene1: "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/invitation-02-02.png",
         scene2: platform === 'taobao' 
-          ? "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/Tabao.png"
-          : "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/Amazon.png",
+          ? "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/Tabao.png"
+          : "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/Amazon.png",
         mainProduct: platform === 'taobao'
-          ? "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/2(1).png"
-          : "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/4.2.png"
+          ? "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/2(1).png"
+          : "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/4.2.png"
       };
     } else {
       // Lianshan Trail Content
       return {
-        intro: "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/mumu_画板 1.jpg",
-        scene1: "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/plan2.png",
+        intro: "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/mumu_画板 1.jpg",
+        scene1: "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/plan2.png",
         tickets: [
-          "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/ticket%20front.png",
-          "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/ticket%20back.png"
+          "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/ticket%20front.png",
+          "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/ticket%20back.png"
         ],
         brochure: {
           upper: [
-            "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/1_画板 1.jpg",
-            "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/5_画板 1.jpg",
-            "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/4_画板 1.jpg"
+            "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/1_画板 1.jpg",
+            "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/5_画板 1.jpg",
+            "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/4_画板 1.jpg"
           ],
           lower: [
-            "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/3_画板 1.jpg",
-            "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/2_画板 1.jpg",
-            "https://raw.githubusercontent.com/ww78819-alt/PIC/main/img/6_画板 1.jpg"
+            "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/3_画板 1.jpg",
+            "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/2_画板 1.jpg",
+            "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/6_画板 1.jpg"
           ]
         }
       };
