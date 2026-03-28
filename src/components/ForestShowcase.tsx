@@ -70,7 +70,7 @@ export default function ForestShowcase({ projectId, onClose }: ForestShowcasePro
         scene1: "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/invitation-02-02.png",
         scene2: platform === 'taobao' 
           ? "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/Tabao.png"
-          : "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/Amazon.jpg",
+          : "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/Amazon.png",
         mainProduct: platform === 'taobao'
           ? "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/2(1).png"
           : "https://fastly.jsdelivr.net/gh/ww78819-alt/PIC@main/img/4.2.png"
