@@ -132,7 +132,7 @@ export default function App() {
             </section>
 
             {/* Page 2: Introduction */}
-            <section className="relative w-full h-screen flex items-center justify-center px-8 md:px-24 bg-[#f5f5f5] border-y border-dark-gray/5 overflow-hidden">
+            <section className="relative w-full min-h-screen md:h-screen flex items-center justify-center px-8 md:px-24 bg-[#f5f5f5] border-y border-dark-gray/5 overflow-hidden py-24 md:py-0">
               <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 items-start gap-8 lg:gap-16 pt-24 md:pt-20">
                 <div className="relative h-[250px] md:h-[400px] flex items-start justify-center">
                   <div className="relative w-full max-w-xs md:max-w-md flex justify-center">
@@ -179,7 +179,7 @@ export default function App() {
             </section>
 
             {/* Page 3: About Me */}
-            <section className="relative w-full h-screen flex flex-col items-center justify-center px-8 md:px-24 bg-[#fafafa] overflow-hidden pt-24 md:pt-32 pb-80 md:pb-48">
+            <section className="relative w-full min-h-screen md:h-screen flex flex-col items-center justify-center px-8 md:px-24 bg-[#fafafa] overflow-hidden pt-32 md:pt-32 pb-[600px] md:pb-48 mt-32 md:mt-0">
               <div className="max-w-5xl w-full flex flex-col items-center justify-center gap-4 md:gap-8 text-center">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -197,7 +197,7 @@ export default function App() {
                       whileHover={{ y: -10, rotate: i % 2 === 0 ? 2 : -2 }}
                       className={`aspect-[3/4] rounded-xl md:rounded-2xl overflow-hidden shadow-lg border-2 border-white ${i % 2 === 0 ? 'mt-2 md:mt-4' : ''}`}
                     >
-                      <img src={src} className="w-full h-full object-cover" alt={`About ${i}`} />
+                      <img src={src} className="w-full h-full object-contain bg-white" alt={`About ${i}`} />
                     </motion.div>
                   ))}
                 </motion.div>

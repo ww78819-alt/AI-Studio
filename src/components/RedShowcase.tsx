@@ -122,7 +122,7 @@ export default function RedShowcase({ onClose }: RedShowcaseProps) {
               />
             </div>
             
-            <div className="relative md:absolute md:bottom-32 md:left-12 lg:bottom-40 lg:left-20 flex flex-col items-center gap-3 z-10 -mt-12 pb-16 md:mt-0 md:py-0">
+            <div className="relative md:absolute md:bottom-32 md:left-12 lg:bottom-40 lg:left-20 flex flex-col items-center gap-3 z-10 -mt-24 pb-16 md:mt-0 md:py-0">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}

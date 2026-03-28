@@ -45,17 +45,21 @@ const MacOSWindow: React.FC<{
     >
       <div className="w-full h-full bg-[#ebebeb] rounded-lg shadow-2xl border border-black/20 overflow-hidden flex flex-col">
         {/* Title Bar */}
-        <div className="window-title-bar h-7 bg-gradient-to-b from-[#f6f6f6] to-[#d1d1d1] flex items-center px-3 gap-2 border-b border-black/10 select-none cursor-default">
+        <div className="window-title-bar h-8 md:h-7 bg-gradient-to-b from-[#f6f6f6] to-[#d1d1d1] flex items-center px-3 gap-2 border-b border-black/10 select-none cursor-default">
           <div className="flex gap-2 items-center">
-            <button onClick={onClose} className="w-3 h-3 rounded-full bg-[#ff5f57] border border-[#e0443e] flex items-center justify-center group">
-              <X className={`w-2 h-2 text-black/40 ${minimal ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} />
+            <button 
+              onClick={onClose} 
+              className="w-6 h-6 md:w-3 md:h-3 rounded-full bg-[#ff5f57] border border-[#e0443e] flex items-center justify-center group"
+              aria-label="Close"
+            >
+              <X className={`w-4 h-4 md:w-2 md:h-2 text-black/60 md:text-black/40 ${minimal ? 'opacity-100' : 'opacity-100 md:opacity-0 md:group-hover:opacity-100'}`} />
             </button>
             {minimal && (
               <button 
                 onClick={onClose}
-                className="flex items-center gap-1 text-[9px] font-bold text-black/50 hover:text-black transition-colors ml-1"
+                className="flex items-center gap-1 text-[10px] md:text-[9px] font-bold text-black/60 md:text-black/50 hover:text-black transition-colors ml-1"
               >
-                <ChevronLeft className="w-2.5 h-2.5" />
+                <ChevronLeft className="w-3 h-3 md:w-2.5 md:h-2.5" />
                 <span>返回</span>
               </button>
             )}
@@ -180,7 +184,7 @@ const GuidebookBooklet: React.FC<{ images: string[]; onClose: () => void }> = ({
       </button>
 
       <div className="w-full h-full max-w-6xl flex flex-col items-center justify-center gap-10 pt-32 pb-12">
-        <div className="relative w-full flex-1 flex items-center justify-center perspective-3000 max-h-[55vh]">
+        <div className="relative w-full flex-1 flex items-center justify-center perspective-3000 max-h-[70vh]">
           <AnimatePresence mode="wait" custom={direction}>
             {renderView()}
           </AnimatePresence>
@@ -333,6 +337,22 @@ export default function MuseumShowcase({ onClose }: MuseumShowcaseProps) {
             className="relative w-full h-full flex flex-col items-center justify-center bg-[#1a1a1a]"
           >
             <ScrollingText />
+            
+            {/* Exit Button for Invitation Scene */}
+            <div className="absolute top-8 left-8 z-[100]">
+              <button 
+                onClick={onClose}
+                className="h-10 px-4 rounded-md bg-white/10 hover:bg-white/20 flex items-center gap-2 text-white/80 transition-all border border-white/10 text-[10px] font-bold uppercase tracking-widest"
+              >
+                <div className="flex gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+                </div>
+                Exit Project
+              </button>
+            </div>
+
             <div className="relative z-10 flex flex-col items-center gap-6">
               <div className="text-center flex flex-col gap-2">
                 <motion.span 
