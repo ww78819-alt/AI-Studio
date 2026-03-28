@@ -48,7 +48,7 @@ const MacOSWindow: React.FC<{
         <div className="window-title-bar h-7 bg-gradient-to-b from-[#f6f6f6] to-[#d1d1d1] flex items-center px-3 gap-2 border-b border-black/10 select-none cursor-default">
           <div className="flex gap-2 items-center">
             <button onClick={onClose} className="w-3 h-3 rounded-full bg-[#ff5f57] border border-[#e0443e] flex items-center justify-center group">
-              <X className="w-2 h-2 text-black/40 opacity-0 group-hover:opacity-100" />
+              <X className={`w-2 h-2 text-black/40 ${minimal ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} />
             </button>
             {minimal && (
               <button 
@@ -458,6 +458,13 @@ export default function MuseumShowcase({ onClose }: MuseumShowcaseProps) {
                   <GuidebookBooklet images={guidebookImages} onClose={() => setActiveOverlay(null)} />
                 ) : (
                   <div className="fixed inset-0 z-[80] flex items-center justify-center p-4 md:p-12 bg-black/40 backdrop-blur-sm pointer-events-none">
+                    {/* Mobile Close Button */}
+                    <button 
+                      onClick={() => setActiveOverlay(null)}
+                      className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all border border-white/10 z-[90] md:hidden pointer-events-auto"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
                     <div className="w-full h-full max-w-5xl max-h-[85vh] relative pointer-events-auto">
                       <MacOSWindow 
                         title={`${hotspots.find(h => h.id === activeOverlay)?.label}.png`}
